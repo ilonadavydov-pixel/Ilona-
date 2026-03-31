@@ -19,7 +19,7 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Ilona-">
       <div className="min-h-screen bg-gray-50">
         <Navigation />
         <main>
