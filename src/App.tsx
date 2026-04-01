@@ -19,7 +19,7 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter basename="/Ilona-">
+    <BrowserRouter basename={import.meta.env.PROD ? '/Ilona-' : '/'}>
       <div className="min-h-screen bg-gray-50">
         <Navigation />
         <main>

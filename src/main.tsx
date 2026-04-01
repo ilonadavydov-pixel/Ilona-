@@ -3,10 +3,12 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
-// Handle GitHub Pages SPA redirect
-const redirect = new URLSearchParams(window.location.search).get('redirect');
-if (redirect) {
-  window.history.replaceState(null, '', '/Ilona-' + redirect);
+// Handle GitHub Pages SPA redirect (production only)
+if (import.meta.env.PROD) {
+  const redirect = new URLSearchParams(window.location.search).get('redirect');
+  if (redirect) {
+    window.history.replaceState(null, '', '/Ilona-' + redirect);
+  }
 }
 
 createRoot(document.getElementById('root')!).render(
