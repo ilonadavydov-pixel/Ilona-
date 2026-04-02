@@ -107,3 +107,26 @@ export function saveSettings(settings: AppSettings): void {
 export function getPracticeDays(): Set<string> {
   return new Set(getSessions().map(s => s.date));
 }
+
+// ── Notes ──────────────────────────────────────────────────
+
+import type { CategorizedNote } from './claude';
+
+const NOTES_KEY = 'tt_notes';
+
+export function getNotes(): CategorizedNote[] {
+  try {
+    return JSON.parse(localStorage.getItem(NOTES_KEY) || '[]');
+  } catch {
+    return [];
+  }
+}
+
+export function saveNotes(notes: CategorizedNote[]): void {
+  localStorage.setItem(NOTES_KEY, JSON.stringify(notes));
+}
+
+export function deleteNote(id: string): void {
+  const updated = getNotes().filter(n => n.id !== id);
+  localStorage.setItem(NOTES_KEY, JSON.stringify(updated));
+}

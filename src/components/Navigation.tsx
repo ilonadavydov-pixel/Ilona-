@@ -7,6 +7,7 @@ const links = [
   { to: '/practice', label: 'Practice', icon: '🎤' },
   { to: '/builder', label: 'Builder', icon: '🏗️' },
   { to: '/progress', label: 'Progress', icon: '📈' },
+  { to: '/notes', label: 'Notes', icon: '📋' },
   { to: '/settings', label: 'Settings', icon: '⚙️' },
 ];
 

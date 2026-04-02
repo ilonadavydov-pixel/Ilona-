@@ -7,6 +7,7 @@ import Practice from './pages/Practice';
 import Builder from './pages/Builder';
 import Progress from './pages/Progress';
 import Settings from './pages/Settings';
+import Notes from './pages/Notes';
 import { scheduleReminder } from './lib/notifications';
 import { getSettings } from './lib/storage';
 
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="/builder" element={<Builder />} />
             <Route path="/progress" element={<Progress />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/notes" element={<Notes />} />
           </Routes>
         </main>
       </div>
